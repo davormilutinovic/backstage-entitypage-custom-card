@@ -1,4 +1,9 @@
-# Customize Backstage Entity Page - Adding Custom Card
+# The Packages Folder
 
-This repository is part of the "Customize Backstage Entity Page - Adding Custom Card" article. For more detailed information and insights, check out the article [here](https://www.linkedin.com/pulse/customize-backstage-entity-page-adding-custom-card-milutinovic-pwtlf).
+This is where your own applications and centrally managed libraries live, each
+in a separate folder of its own.
 
+From the start there's an `app` folder (for the frontend) and a `backend` folder
+(for the Node backend), but you can also add more modules in here that house
+your core additions and adaptations, such as themes, common React component
+libraries, utilities, and similar.
