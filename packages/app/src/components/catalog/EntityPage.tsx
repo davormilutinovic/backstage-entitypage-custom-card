@@ -58,6 +58,8 @@ import {
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
+import { SimpleCard } from '../custom-cards/SimpleCard';
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -127,6 +129,11 @@ const overviewContent = (
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
+
+    <Grid item md={6}>
+      <SimpleCard />
+    </Grid>
+
     <Grid item md={6} xs={12}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
@@ -175,11 +182,23 @@ const serviceEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+
+
+
   </EntityLayout>
 );
 
 const websiteEntityPage = (
+
   <EntityLayout>
+    <EntityLayout.Route path="/simplecard" title="Custom Cards Demo">
+      <Grid container spacing={5} alignItems="stretch">
+        <Grid item xs="auto">
+          <SimpleCard />
+        </Grid>
+      </Grid>
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/" title="Overview">
       {overviewContent}
     </EntityLayout.Route>
@@ -201,6 +220,17 @@ const websiteEntityPage = (
 
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/simplecard" title="Custom Cards Demo">
+      <Grid container spacing={5} alignItems="stretch">
+        <Grid item xs="auto">
+          <SimpleCard />
+        </Grid>
+        <Grid item xs={6} md={4}>
+          <SimpleCard />
+        </Grid>
+      </Grid>
     </EntityLayout.Route>
   </EntityLayout>
 );
